@@ -1,5 +1,4 @@
-/// <reference path="Teacher.ts" />
-/// <reference path="Subject.ts" />
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,24 +12,25 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Subjects;
-(function (Subjects) {
-    var Cpp = /** @class */ (function (_super) {
-        __extends(Cpp, _super);
-        function Cpp() {
-            return _super !== null && _super.apply(this, arguments) || this;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cpp = void 0;
+var Subject_1 = require("./Subject");
+var Cpp = /** @class */ (function (_super) {
+    __extends(Cpp, _super);
+    function Cpp() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Cpp.prototype.getRequirements = function () {
+        return 'Here is the list of requirements for Cpp';
+    };
+    Cpp.prototype.getAvailableTeacher = function () {
+        var _a;
+        if (!((_a = this.teacher) === null || _a === void 0 ? void 0 : _a.experienceTeachingC)) {
+            return 'No available teacher';
         }
-        Cpp.prototype.getRequirements = function () {
-            return 'Here is the list of requirements for Cpp';
-        };
-        Cpp.prototype.getAvailableTeacher = function () {
-            if (!this.teacher || this.teacher.experienceTeachingC === undefined || this.teacher.experienceTeachingC <= 0) {
-                return 'No available teacher';
-            }
-            return "Available Teacher: " + this.teacher.firstName;
-        };
-        return Cpp;
-    }(Subjects.Subject));
-    Subjects.Cpp = Cpp;
-})(Subjects || (Subjects = {}));
+        return "Available Teacher: " + this.teacher.firstName;
+    };
+    return Cpp;
+}(Subject_1.Subject));
+exports.Cpp = Cpp;
 //# sourceMappingURL=Cpp.js.map

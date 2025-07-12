@@ -1,5 +1,4 @@
-/// <reference path="Teacher.ts" />
-/// <reference path="Subject.ts" />
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -13,24 +12,25 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Subjects;
-(function (Subjects) {
-    var Java = /** @class */ (function (_super) {
-        __extends(Java, _super);
-        function Java() {
-            return _super !== null && _super.apply(this, arguments) || this;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Java = void 0;
+var Subject_1 = require("./Subject");
+var Java = /** @class */ (function (_super) {
+    __extends(Java, _super);
+    function Java() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Java.prototype.getRequirements = function () {
+        return 'Here is the list of requirements for Java';
+    };
+    Java.prototype.getAvailableTeacher = function () {
+        var _a;
+        if (!((_a = this.teacher) === null || _a === void 0 ? void 0 : _a.experienceTeachingC)) {
+            return 'No available teacher';
         }
-        Java.prototype.getRequirements = function () {
-            return 'Here is the list of requirements for Java';
-        };
-        Java.prototype.getAvailableTeacher = function () {
-            if (!this.teacher || this.teacher.experienceTeachingJava === undefined || this.teacher.experienceTeachingJava <= 0) {
-                return 'No available teacher';
-            }
-            return "Available Teacher: " + this.teacher.firstName;
-        };
-        return Java;
-    }(Subjects.Subject));
-    Subjects.Java = Java;
-})(Subjects || (Subjects = {}));
+        return "Available Teacher: " + this.teacher.firstName;
+    };
+    return Java;
+}(Subject_1.Subject));
+exports.Java = Java;
 //# sourceMappingURL=Java.js.map
